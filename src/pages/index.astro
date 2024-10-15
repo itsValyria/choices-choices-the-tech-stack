@@ -1,8 +1,26 @@
 ---
 import Layout from '../layouts/layout.astro';
+import { fetchData } from '../lib/fetch-api-data';
+
+// Fetching data from the Directus API
+const { webinars, contourings } = await fetchData();
 ---
 
 <Layout title="Oncollaboration | Home" description="Where radiotherapists all across the world meet.">
   <h1>Hello, world!</h1>
   <p>Welcome to my website.</p>
+
+  <h2>Webinars</h2>
+  <ul>
+    {webinars.map(webinar => (
+      <li key={webinar.id}>{webinar.title}</li>
+    ))}
+  </ul>
+
+  <h2>Contourings</h2>
+  <ul>
+    {contourings.map(contouring => (
+      <li key={contouring.id}>{contouring.title}</li>
+    ))}
+  </ul>
 </Layout>
