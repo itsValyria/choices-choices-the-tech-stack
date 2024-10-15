@@ -13,14 +13,14 @@ const { webinars, contourings } = await fetchData();
   <h2>Webinars</h2>
   <ul>
     {webinars.map(webinar => (
-      <li key={webinar.id}>{webinar.title}</li>
+      <li>{webinar.title}</li> // Removed key here
     ))}
   </ul>
 
   <h2>Contourings</h2>
   <ul>
     {contourings.map(contouring => (
-      <li key={contouring.id}>{contouring.title}</li>
+      <li>{contouring.title}</li> // Removed key here
     ))}
   </ul>
 </Layout>
