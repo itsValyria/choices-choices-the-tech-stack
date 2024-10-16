@@ -51,6 +51,12 @@ svg {
   fill: var(--navigation-active);
 }
 
+/* ---------------- Footer ---------------- */
+
+footer {
+  display: none;
+}
+
 /* ---------------- Media Queries ---------------- */
 
 @media screen and (min-width: 768px) {
@@ -97,6 +103,40 @@ svg {
     padding-bottom: calc(1rem + 3px);
     border-top: 0;
   }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darker-red);
+    padding: 2rem;
+    color: var(--lighter-white);
+  }
+
+  footer img {
+    height: 3.2rem;
+  }
+
+  footer a {
+    font-weight: normal;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .dot__divider li {
+    position: relative;
+    padding-left: 10px;
+  }
+  
+  .dot__divider li:not(:last-child)::after {
+    content: ' • ';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 @media screen and (min-width: 1799px) {
@@ -106,5 +146,9 @@ svg {
 
   ul {
     margin-right: 6rem;
+  }
+
+  footer {
+    padding: 2rem 6rem;
   }
 }
