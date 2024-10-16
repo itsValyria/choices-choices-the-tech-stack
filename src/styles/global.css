@@ -80,7 +80,7 @@ a {
 
 :focus {
   outline: var(--focus);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-sm);
 }
 
 :focus:not(:focus-visible){
