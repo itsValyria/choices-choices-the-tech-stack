@@ -1,0 +1,88 @@
+/* ---------------- Fonts ---------------- */
+
+@font-face {
+  font-family: 'VAGRundschrift';
+  src: url('/fonts/vag_rundschrift_d.ttf') format('truetype');
+}
+
+/* ---------------- Custom properties ---------------- */
+
+:root {
+  /* Fonts */
+  --primary-font: "Open Sans", sans-serif;
+  --heading-font: "VAGRundschrift", sans-serif;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+
+  /* Colors: generic */
+  --darker-black: #000;
+  --lighter-black: #222222;
+
+  --darker-white: #F0E5E9;
+  --lighter-white: #fff;
+
+  --darker-red: #6a0025;
+  --lighter-red: #D2B2BD;
+
+  --normal-blue: #0000ff;
+
+  /* Colors: element */
+  --primary-color: var(--red-normal);
+  --secondary-color: var(--red-light);
+
+  --body-background-color: var(--darker-white);
+  
+  --focus: solid 2px var(var(--normal-blue));
+
+  /* Border radius */
+  --border-radius-xs: 4px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 18px;
+  --border-radius-xl: 24px
+}
+
+/* ---------------- Global styles ---------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--primary-font), sans-serif;
+  background-color: var(--body-background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font), sans-serif;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------------- Accessibility styles ---------------- */
+
+:focus {
+  outline: var(--focus);
+  border-radius: var(--border-radius-small);
+}
+
+:focus:not(:focus-visible){
+  outline: 0;
+}
