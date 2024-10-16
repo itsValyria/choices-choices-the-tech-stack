@@ -34,12 +34,14 @@
   --normal-blue: #0000ff;
 
   /* Colors: element */
-  --primary-color: var(--red-normal);
-  --secondary-color: var(--red-light);
+  --primary-color: var(--darker-red);
+  --secondary-color: var(--lighter-red);
 
   --body-background-color: var(--darker-white);
   
-  --focus: solid 2px var(var(--normal-blue));
+  --focus: solid 2px var(--normal-blue);
+  
+  --navigation-active: var(--darker-red);
 
   /* Border radius */
   --border-radius-xs: 4px;
@@ -74,6 +76,7 @@ ul li {
 
 a {
   text-decoration: none;
+  color: unset;
 }
 
 /* ---------------- Accessibility styles ---------------- */

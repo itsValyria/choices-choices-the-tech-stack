@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/layout.astro';
+import { fetchData } from '../lib/fetch-api-data';
+
+// Fetching data from the Directus API
+const { webinars, contourings } = await fetchData();
+---
+
+<Layout>
+  
+</Layout>
