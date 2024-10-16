@@ -60,6 +60,8 @@ html {
 body {
   font-family: var(--primary-font), sans-serif;
   background-color: var(--body-background-color);
+  padding: 0;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,9 +91,3 @@ a {
 :focus:not(:focus-visible){
   outline: 0;
 }
-
-/* ---------------- Header ---------------- */
-
-
-
-/* ---------------- Navigation ---------------- */

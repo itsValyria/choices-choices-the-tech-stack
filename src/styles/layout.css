@@ -1,0 +1,43 @@
+/* ---------------- Navigation ---------------- */
+
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  background-color: var(--lighter-white);
+  box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+li a {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 0.6rem 0.6rem 0; 
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  border-top: 3px solid transparent;
+}
+
+svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------------- Navigation: active styles ---------------- */
+
+.active {
+  color: var(--navigation-active);
+  border-top: 3px solid var(--navigation-active);
+}
+
+.active svg {
+  fill: var(--navigation-active);
+}
