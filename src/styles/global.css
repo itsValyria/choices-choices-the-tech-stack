@@ -44,6 +44,8 @@
   --button-background: var(--darker-red);
   --button-text: var(--lighter-white);
 
+  --text-accent: var(--darker-red);
+
   /* Border radius */
   --border-radius-xs: 4px;
   --border-radius-sm: 6px;

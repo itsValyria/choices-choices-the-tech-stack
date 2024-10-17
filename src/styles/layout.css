@@ -79,8 +79,8 @@ footer {
 @media screen and (min-width: 1499px) {
   header img {
     display: block;
-    position: fixed;
     margin-left: 4rem;
+    position: absolute;
   }
 
   nav {

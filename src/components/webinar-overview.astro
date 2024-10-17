@@ -6,25 +6,25 @@ import { fetchData } from '../lib/fetch-api-data';
 const { webinars, contourings } = await fetchData();
 ---
 
-<h2>Webinars</h2>
-<ul>
-  {webinars.map(webinar => (
+<h2>Featured webinars</h2>
+<ul class="webinar__carousel">
+  {webinars.slice(0, 4).map(webinar => (
     <li>
       <article>
         <a href={`/webinars/${webinar.slug}`}>
-          <div class="container-image">
+          <div class="webinar__image--container">
             <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
-            <p class="duration">{webinar.duration}</p>
+            <p class="webinar__duration">{webinar.duration}</p>
           </div>
           <h3>{webinar.title}</h3>
-          <p class="speakers">
+          <p class="webinar__speakers">
             {webinar.speakers.map(speaker => (
               <span>{speaker.avl_speakers_id.fullname}</span>
             ))}
           </p>
-          <div class="categories">
+          <div class="webinar__categories">
             {webinar.categories.map(category => (
-              <p class="category">{category.avl_categories_id.name}</p>
+              <p class="webinar__category">{category.avl_categories_id.name}</p>
             ))}
           </div>
         </a>
@@ -32,3 +32,4 @@ const { webinars, contourings } = await fetchData();
     </li>
   ))}
 </ul>
+<a class="webinar__button" href="/webinars">See all webinars</a>
