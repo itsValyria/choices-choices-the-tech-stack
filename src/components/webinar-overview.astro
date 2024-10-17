@@ -10,8 +10,25 @@ const { webinars, contourings } = await fetchData();
 <ul>
   {webinars.map(webinar => (
     <li>
-      {webinar.title}
-      <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
+      <article>
+        <a href={`/webinars/${webinar.slug}`}>
+          <div class="container-image">
+            <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
+            <p class="duration">{webinar.duration}</p>
+          </div>
+          <h3>{webinar.title}</h3>
+          <p class="speakers">
+            {webinar.speakers.map(speaker => (
+              <span>{speaker.avl_speakers_id.fullname}</span>
+            ))}
+          </p>
+          <div class="categories">
+            {webinar.categories.map(category => (
+              <p class="category">{category.avl_categories_id.name}</p>
+            ))}
+          </div>
+        </a>
+      </article>
     </li>
   ))}
 </ul>

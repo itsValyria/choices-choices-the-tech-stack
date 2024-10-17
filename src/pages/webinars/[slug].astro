@@ -1,0 +1,43 @@
+---
+import { fetchData } from '../../lib/fetch-api-data';
+
+// Fetch data for dynamic paths
+export async function getStaticPaths() {
+  const { webinars } = await fetchData();
+
+  // Map the webinars to the correct paths using their slugs
+  return webinars.map((webinar) => ({
+    params: { slug: webinar.slug }
+  }));
+}
+
+// Get the slug from the URL params
+const { slug } = Astro.params;
+
+// Fetch all webinars
+const { webinars } = await fetchData();
+
+// Find the specific webinar using slug
+const webinar = webinars.find(w => w.slug === slug);
+if (!webinar) {
+  throw new Error(`Webinar with slug '${slug}' not found`);
+}
+---
+
+<article>
+  <h1>{webinar.title}</h1>
+  <div class="container-image">
+    <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
+    <p class="duration">{webinar.duration}</p>
+  </div>
+  <p class="speakers">
+    {webinar.speakers.map(speaker => (
+      <span>{speaker.avl_speakers_id.fullname}</span>
+    ))}
+  </p>
+  <div class="categories">
+    {webinar.categories.map(category => (
+      <p class="category">{category.avl_categories_id.name}</p>
+    ))}
+  </div>
+</article>
