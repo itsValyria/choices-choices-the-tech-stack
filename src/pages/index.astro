@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro';
+import Searchbar from '../components/searchbar.astro'
 import { fetchData } from '../lib/fetch-api-data';
 
 // Fetching data from the Directus API
@@ -7,6 +8,9 @@ const { webinars, contourings } = await fetchData();
 ---
 
 <Layout title="Oncollaboration | Home" description="Where radiotherapists all across the world meet.">
+
+  <h1>Home</h1>
+  <Searchbar></Searchbar>
 
   <h2>Webinars</h2>
   <!-- <ul>
