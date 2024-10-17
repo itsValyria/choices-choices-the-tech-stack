@@ -1,0 +1,17 @@
+---
+import '../styles/webinar-overview.css';
+import { fetchData } from '../lib/fetch-api-data';
+
+// Fetching data from the Directus API
+const { webinars, contourings } = await fetchData();
+---
+
+<h2>Webinars</h2>
+<ul>
+  {webinars.map(webinar => (
+    <li>
+      {webinar.title}
+      <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
+    </li>
+  ))}
+</ul>

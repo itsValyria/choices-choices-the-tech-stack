@@ -1,10 +1,7 @@
 ---
 import Layout from '../layouts/layout.astro';
 import Searchbar from '../components/searchbar.astro'
-import { fetchData } from '../lib/fetch-api-data';
-
-// Fetching data from the Directus API
-const { webinars, contourings } = await fetchData();
+import WebinarOverview from '../components/webinar-overview.astro'
 ---
 
 <Layout title="Oncollaboration | Home" description="Where radiotherapists all across the world meet.">
@@ -12,15 +9,7 @@ const { webinars, contourings } = await fetchData();
   <h1>Home</h1>
   <Searchbar></Searchbar>
 
-  <h2>Webinars</h2>
-  <!-- <ul>
-    {webinars.map(webinar => (
-      <li>
-        {webinar.title}
-        <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
-      </li>
-    ))}
-  </ul> -->
+  <WebinarOverview></WebinarOverview>
 
   <h2>Contourings</h2>
   <!-- <ul>
