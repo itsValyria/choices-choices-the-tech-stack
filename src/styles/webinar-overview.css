@@ -72,11 +72,22 @@ article .webinar__speakers span:not(:first-child)::before {
 /* ---------------- Media Queries ---------------- */
 
 @media screen and (min-width: 768px) {
-
+  .webinar__carousel {
+    scrollbar-width: none;
+  }
 }
 
 @media screen and (min-width: 1499px) {
+  .webinar__carousel {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: unset;
+    margin: 0;
+  }
 
+  .webinar__carousel li {
+    max-width: 22em;
+  }
 }
 
 @media screen and (min-width: 1799px) {
