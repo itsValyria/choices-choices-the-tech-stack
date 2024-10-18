@@ -77,7 +77,7 @@ article .webinar__speakers span:not(:first-child)::before {
   }
 }
 
-@media screen and (min-width: 1499px) {
+@media screen and (min-width: 1349px) {
   .webinar__carousel {
     display: flex;
     justify-content: flex-start;
@@ -86,6 +86,10 @@ article .webinar__speakers span:not(:first-child)::before {
   }
 
   .webinar__carousel li {
+    max-width: 22em;
+  }
+
+  .webinar__carousel li a {
     max-width: 22em;
   }
 }
