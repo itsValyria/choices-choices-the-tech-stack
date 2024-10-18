@@ -1,5 +1,5 @@
 ---
-import "../styles/search.css";
+
 ---
 
 <form>
@@ -10,3 +10,46 @@ import "../styles/search.css";
     </svg>
   </button>
 </form>
+
+<style>
+  form {
+    display: flex;
+  }
+
+  input {
+    width: 60vw;
+    border: none;
+    padding: 0 0.6rem;
+    border-start-start-radius: var(--border-radius-md);
+    border-end-start-radius: var(--border-radius-md);
+  }
+
+  input::placeholder {
+    font-family: var(--primary-font);
+    font-size: var(--font-size-sm);
+  }
+
+  button {
+    border: none;
+    border-start-end-radius: var(--border-radius-md);
+    border-end-end-radius: var(--border-radius-md);
+    background-color: var(--button-background);
+  }
+
+  button svg {
+    height: 1.6rem;
+    padding: 0.2rem 0
+  }
+
+  button svg path {
+    fill: var(--button-text);
+  }
+
+  /* ---------------- Media Queries ---------------- */
+
+  @media screen and (min-width: 768px) {
+    button {
+      max-width: 4rem;
+    }
+  }
+</style>

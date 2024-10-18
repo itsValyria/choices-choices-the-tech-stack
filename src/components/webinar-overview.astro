@@ -1,5 +1,4 @@
 ---
-import '../styles/webinar-overview.css';
 import { fetchData } from '../lib/fetch-api-data';
 
 // Fetching data from the Directus API
@@ -33,3 +32,103 @@ const { webinars, contourings } = await fetchData();
   ))}
 </ul>
 <a class="webinar__button" href="/webinars">See all webinars</a>
+
+<style>
+  /* ---------------- Webinar Overview ---------------- */
+  article h3 {
+    margin: 0.2rem 0;
+  }
+
+  article p {
+    margin: 0;
+  }
+
+  article p:nth-last-child(2) {
+    color: var(--text-accent);
+  }
+
+  article .webinar__speakers span:not(:first-child)::before {
+    content: " — ";
+  }
+
+  .webinar__carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 0px;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      margin: 0 auto;
+      gap: 10px;
+  }
+
+  .webinar__carousel li a {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .webinar__image--container {
+    position: relative;
+  }
+
+  .webinar__image--container img {
+    height: 12em;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .webinar__duration {
+    position: absolute;
+    bottom: 12px;
+    right: 6px;
+    background-color: var(--darker-black);
+    color: var(--lighter-white);
+    width: min-content;
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .webinar__category {
+    display: none;
+  }
+
+  .webinar__button {
+    display: inline-block;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.6rem 0;
+  }
+
+  /* ---------------- Media Queries ---------------- */
+  @media screen and (min-width: 768px) {
+    .webinar__carousel {
+      scrollbar-width: none;
+    }
+  }
+
+  @media screen and (min-width: 1349px) {
+    .webinar__carousel {
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: unset;
+      margin: 0;
+    }
+
+    .webinar__carousel li {
+      max-width: 22em;
+    }
+
+    .webinar__carousel li a {
+      max-width: 22em;
+    }
+  }
+
+  @media screen and (min-width: 1799px) {
+    
+  }
+</style>
