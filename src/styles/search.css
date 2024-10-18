@@ -2,11 +2,10 @@
 
 form {
   display: flex;
-  width: 75%;
 }
 
 input {
-  width: 85%;
+  width: 60vw;
   border: none;
   padding: 0 0.6rem;
   border-start-start-radius: var(--border-radius-md);
@@ -19,7 +18,6 @@ input::placeholder {
 }
 
 button {
-  width: 15%;
   border: none;
   border-start-end-radius: var(--border-radius-md);
   border-end-end-radius: var(--border-radius-md);
