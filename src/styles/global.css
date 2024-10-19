@@ -31,13 +31,13 @@
   --darker-red: #6a0025;
   --lighter-red: #D2B2BD;
 
+  --focus: solid 2px #002fff;
+
   /* Colors: element */
   --primary-color: var(--darker-red);
   --secondary-color: var(--lighter-red);
 
   --body-background-color: var(--darker-white);
-  
-  --focus: solid 2px var(--darker-red);
   
   --navigation-active: var(--darker-red);
 
