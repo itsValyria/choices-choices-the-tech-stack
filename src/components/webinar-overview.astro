@@ -126,9 +126,77 @@ const { webinars, contourings } = await fetchData();
     .webinar__carousel li a {
       max-width: 22em;
     }
+
+    .webinar__carousel.dragging {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    .webinar__carousel {
+      cursor: grab;
+      cursor: -webkit-grab;
+    }
   }
 
   @media screen and (min-width: 1799px) {
     
   }
 </style>
+
+<script>
+  // Get the carousel element and cast it as an HTMLElement or null (if not found, because typescript, yay)
+  const carousel = document.querySelector('.webinar__carousel') as HTMLElement | null;
+
+  // Check if the device supports touch (for disabling drag on touch devices)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  // Only apply drag functionality on non-touch devices
+  if (carousel && !isTouchDevice) { 
+    let isDragging = false;
+    let startPos = 0;
+    let currentScrollPos = 0;
+
+    // Event listener for when the user clicks the mouse down, 
+    // cast the event as a MouseEvent, set dragging flag to true, add class to change cursor style, 
+    // calculate and store initial/current mouse position.
+    carousel.addEventListener('mousedown', (e) => {
+      const mouseEvent = e as MouseEvent;
+      isDragging = true;
+      carousel.classList.add('dragging');
+      startPos = mouseEvent.pageX - carousel.offsetLeft;
+      currentScrollPos = carousel.scrollLeft;
+    });
+
+    // Event listener for when the mouse leaves the carousel area, only execute if the dragger is active, 
+    // stop dragging, remove dragging class
+    carousel.addEventListener('mouseleave', () => {
+      if (isDragging) {
+        isDragging = false;
+        carousel.classList.remove('dragging');
+      }
+    });
+
+    // Event listener for when the mouse button is released, only execute when dragging is active, stop dragging,
+    // remove dragging class
+    carousel.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        carousel.classList.remove('dragging');
+      }
+    });
+
+    // Event listener for when the mouse moves (dragging), only execute if dragging is active, cast as MouseEvent, 
+    // preventDefault behavior like text selection
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const mouseEvent = e as MouseEvent;
+      e.preventDefault();
+
+      // Calculate the new mouse position relative to the carousel, calculate the scroll distance,
+      // multiply by 2 to increase scroll speed, update the carousel scroll position based on the drag
+      const x = mouseEvent.pageX - carousel.offsetLeft;
+      const walk = (x - startPos) * 2;
+      carousel.scrollLeft = currentScrollPos - walk;
+    });
+  }
+</script>
