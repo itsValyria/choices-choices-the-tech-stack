@@ -7,6 +7,23 @@ header img {
   margin: 0.4rem 2rem;
 }
 
+main h1 {
+  margin-top: 0;
+}
+
+.mobile__header {
+  background-color: var(--navigation-active);
+  padding: 0.4rem 0;
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3);
+}
+
+.mobile__header img {
+  display: block;
+  height: 3rem;
+}
+
 /* ---------------- Navigation ---------------- */
 
 nav {
@@ -74,6 +91,15 @@ footer {
     font-size: var(--font-size-sm);
     padding: 1rem 1rem 0;
   }
+  
+  .mobile__header {
+    padding: 0.4rem 4rem;
+  }
+
+  .mobile__header img {
+    margin: 0.4rem 0;
+    height: 3.6rem;
+  }
 }
 
 @media screen and (min-width: 1499px) {
@@ -104,6 +130,10 @@ footer {
 
   svg {
     padding-left: 1rem;
+  }
+
+  .mobile__header {
+    display: none;
   }
 
   .active {
