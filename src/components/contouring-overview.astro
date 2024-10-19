@@ -13,8 +13,13 @@ const { webinars, contourings } = await fetchData();
         <a href={`/contourings/${contouring.slug}`}>
           <div>
             <img 
-              src={`https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}`} 
+              src={`https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}?format=webp`} 
+              srcset={`https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}?w=300&format=webp 300w,
+                      https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}?w=600&format=webp 600w,
+                      https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}?w=1200&format=webp 1200w`} 
+              sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px" 
               alt="CT-Scans" 
+              loading="lazy" 
               width="384" 
               height="384" 
             />
