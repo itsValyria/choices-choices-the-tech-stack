@@ -28,6 +28,7 @@ main h1 {
 
 nav {
   position: fixed;
+  z-index: 1;
   bottom: 0;
   width: 100%;
 
