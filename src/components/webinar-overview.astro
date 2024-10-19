@@ -12,7 +12,15 @@ const { webinars, contourings } = await fetchData();
       <article>
         <a href={`/webinars/${webinar.slug}`}>
           <div class="webinar__image--container">
-            <img src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} alt="thumbnail" />
+            <img 
+              src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`} 
+              srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?w=300 300w,
+                        https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?w=600 600w,
+                        https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?w=1200 1200w`} 
+              sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px" 
+              alt="thumbnail" 
+              loading="lazy"
+            />
             <p class="webinar__duration">{webinar.duration}</p>
           </div>
           <h3>{webinar.title}</h3>
