@@ -2,6 +2,7 @@
 import Layout from '../layouts/layout.astro';
 import Searchbar from '../components/searchbar.astro'
 import WebinarOverview from '../components/webinar-overview.astro'
+import ContouringOverview from '../components/contouring-overview.astro'
 ---
 
 <Layout title="Oncollaboration | Home" description="Where radiotherapists all across the world meet.">
@@ -11,13 +12,5 @@ import WebinarOverview from '../components/webinar-overview.astro'
 
   <WebinarOverview></WebinarOverview>
 
-  <h2>Featured contourings</h2>
-  <!-- <ul>
-    {contourings.map(contouring => (
-      <li>
-        {contouring.title}
-        <img src={`https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}`} alt="CT-Scans" />
-      </li>
-    ))}
-  </ul> -->
+  <ContouringOverview></ContouringOverview>
 </Layout>

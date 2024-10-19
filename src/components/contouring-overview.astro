@@ -1,0 +1,117 @@
+---
+import { fetchData } from '../lib/fetch-api-data';
+
+// Fetching data from the Directus API
+const { webinars, contourings } = await fetchData();
+---
+
+<h2>Featured contourings</h2>
+<ul class="contouring__carousel">
+  {contourings.map((contouring) => (
+    <li>
+      <article>
+        <a href={`/contourings/${contouring.slug}`}>
+          <div>
+            <img 
+              src={`https://fdnd-agency.directus.app/assets/${contouring.image_scan.id}`} 
+              alt="CT-Scans" 
+              width="384" 
+              height="384" 
+            />
+            {contouring.categories.map((category) => (
+              <span class="contouring__categories">
+                {category.avl_categories_id.name}
+              </span>
+            ))}
+          </div>
+          <h3>{contouring.title}</h3>
+          <p>{contouring.user_id.fullname}</p>
+        </a>
+      </article>
+    </li>
+  ))}
+</ul>
+<a class="contouring__button" href="/webinars">See all countourings</a>
+
+<style>
+  /* ---------------- Contouring overview ---------------- */
+  article {
+    max-width: 22rem;
+  }
+  
+  img {
+    height: auto;
+    width: 12rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  h3 {
+    margin: 0.2rem 0;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-accent);
+  }
+
+  .contouring__carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .contouring__carousel li a {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .contouring__categories {
+    display: none;
+  }
+
+  .contouring__button {
+    display: inline-block;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.6rem 0;
+  }
+
+  /* ---------------- Media Queries ---------------- */
+  @media screen and (min-width: 768px) {
+    .contouring__carousel {
+      scrollbar-width: none;
+      gap: 10px;
+    }
+  }
+
+  @media screen and (min-width: 949px) {
+    .contouring__carousel {
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: unset;
+      margin: 0;
+      gap: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1799px) {
+    img {
+      width: 16rem;
+    }
+
+    .contouring__carousel {
+      gap: 20px;
+    }
+  }
+</style>

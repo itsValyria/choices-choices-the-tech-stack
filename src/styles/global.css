@@ -101,6 +101,12 @@ a {
 
 /* ---------------- Media Queries ---------------- */
 
+@media screen and (max-width: 767px) {
+  main {
+    margin-bottom: 6em;
+  }
+}
+
 @media screen and (min-width: 768px) {
   main {
     padding: 4rem;
@@ -115,6 +121,6 @@ a {
 
 @media screen and (min-width: 1799px) {
   main {
-    padding: 4rem 8rem;
+    padding: 2rem 8rem;
   }
 }
