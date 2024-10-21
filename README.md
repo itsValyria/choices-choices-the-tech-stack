@@ -24,11 +24,23 @@ Je kunt op dit platform webinars bekijken en vragen daarover stellen. Ook kun je
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+### Astro
 Bij het bouwen van deze website hebben we gebruik gemaakt van **Astro**. 
 
+### Directus
 Ik heb gebruik gemaakt van componenten en ik heb de website dynamisch gemaakt met data uit **Directus**.
 
-Ook is de website gebouwd volgens **mobile first** en zo veel mogelijk **progressively enhanced**.
+### Progressive Enhancement
+Progressive Enhancement betekent eigenlijk dat je werkt in drie fundamentele lagen, zodat je website het altijd zo goed mogelijk doet. De eerste laag is de HTML, de fundamentals. De tweede laag is de CSS, de visuals. En de derde laag zijn de enhancements, vaak met JavaScript of andere poespas.
+
+### Mobile first
+Mobile First betekent dat je begint met het ontwerpen en ontwikkelen van een website of applicatie voor kleine schermen en mobiele apparaten, voordat je deze uitbreidt naar grotere schermen. Het idee is dat je de basisfunctionaliteiten en content optimaliseert voor mobiele gebruikers, die vaak te maken hebben met beperktere schermgrootte en soms tragere verbindingen. Vervolgens voeg je stapsgewijs extra stijlen en functionaliteiten toe voor grotere schermen, zoals tablets en desktops.
+
+Net zoals bij Progressive Enhancement, werk je met lagen:
+
+- **De eerste laag:** De mobiele versie van de website, met de essentiële content en een eenvoudige layout.
+- **De tweede laag:** Extra stijlen en layout-optimalisaties voor grotere schermen (CSS media queries).
+- **De derde laag:** Verbeteringen voor desktopgebruikers, zoals geavanceerde functionaliteiten en visuele elementen.
 
 ## Installatie
 
@@ -48,11 +60,23 @@ Happy coding!
 
 Op de website kun je scrollen door de webinars en contourings. Als het uiteindelijk af is kun je de webinars bekijken en vragen in de comments achterlaten. Ook kun je met je collegas de contourings bespreken.
 
+### Overzicht webinars en contourings
+Op de homepage vind je een overzicht wan featured webinars en contourings, en ook de mogelijkheid om met het knopje ```see all webinars``` of ```see all contourings``` door te navigeren naar de overzichtpagina's hier van.
+
+### Webinars kijken
+Na het klikken op ```see all webinars``` of ```webinars``` in de navigatiebalk, kom je bij de overzichtspagina van alle webinars. Hier kun je filteren en naar de detailpagina van elke webinar, waar zich de video en een transcript bevindt.
+
+### Contourings bekijken
+Na het klikken op ```see all contourings``` of ```contourings``` in de navigatiebalk, kom je bij de overzichtspagina van alle contourings. Hier kun je filterren en naar de detailpagina van elke contouring.
+
+### FAQ / Besprekingen
+Ergens binnen de website moet ook de optie zijn om webinars/contourings/casussen te kunnen bespreken, waar vragen/antwoorden ook openbaar te zien zijn, als een soort fora.
+
 ## Bronnen
 
-[Astro Docs](https://docs.astro.build/en/getting-started/)
-[Directus: Custom Transformations](https://docs.directus.io/reference/files.html#custom-transformations)
-[Directus: Image optimization](https://learndirectus.com/image-optimization-in-directus/)
+- [Astro Docs](https://docs.astro.build/en/getting-started/)
+- [Directus: Custom Transformations](https://docs.directus.io/reference/files.html#custom-transformations)
+- [Directus: Image optimization](https://learndirectus.com/image-optimization-in-directus/)
 
 ## Licentie
 
